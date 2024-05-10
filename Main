@@ -1,0 +1,51 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include "main.h"
+
+using namespace std;
+
+// Function to simulate fighting a trainer
+void fightTrainer() {
+    cout << "You chose to fight a trainer!" << endl;
+    // Add your fighting logic here
+}
+
+// Function to simulate fighting an asciimon
+void fightAsciimon() {
+    cout << "You chose to fight an asciimon!" << endl;
+    // Add your asciimon fighting logic here
+}
+
+int main() {
+    srand(time(0)); // Seed the random number generator
+
+    cout << "Welcome to the Terminal Fighter!" << endl;
+
+    while (true) {
+        cout << "Choose an option:" << endl;
+        cout << "1. Fight a Trainer" << endl;
+        cout << "2. Fight an Asciimon" << endl;
+        cout << "3. Quit" << endl;
+
+        int choice;
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch(choice) {
+            case 1:
+                fightTrainer();
+                break;
+            case 2:
+                fightAsciimon();
+                break;
+            case 3:
+                cout << "Goodbye!" << endl;
+                return 0;
+            default:
+                cout << "Invalid choice. Please enter a number between 1 and 3." << endl;
+        }
+    }
+
+    return 0;
+}
